@@ -30,11 +30,17 @@ export const register = async (req,res)=>{
 export const login = (req,res)=>{
     const { username, password} = req.body;
 
+    try{
     // check if the user exists
 
     //check if the password is correct
 
     //generate cookie token and send it to user
+    }catch(err){
+        console.log(err);
+        res.status(500).json({message: "Failed to login!"})
+        
+    }
 };
 
 export const logout = (req,res)=>{
