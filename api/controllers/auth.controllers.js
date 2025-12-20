@@ -49,8 +49,10 @@ export const login = async (req,res)=>{
 
     // res.setHeader("Set-Cookie", "test=" + "myValue")
 
+    const age = 1000 * 60 * 60 * 24 * 7;
     res.cookie("test2", "myValue2", {
-        httpOnly:true
+        httpOnly:true,
+        maxAge: age,
     })
     .status(200)
     .json({message: "Login Succesful"});
